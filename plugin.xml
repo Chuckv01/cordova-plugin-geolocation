@@ -98,9 +98,15 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <header-file src="src/ios/CDVLocation.h" />
         <source-file src="src/ios/CDVLocation.m" />
         <framework src="CoreLocation.framework" />
+      
+        <config-file target="*-Info.plist" parent="UIBackgroundModes">
+            <array>
+                <string>location</string>
+            </array>
+        </config-file>
 
         <preference name="GEOLOCATION_USAGE_DESCRIPTION" default=" " />
-        <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+        <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
             <string>$GEOLOCATION_USAGE_DESCRIPTION</string>
         </config-file>
 
